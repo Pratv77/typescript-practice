@@ -97,3 +97,62 @@ displayStudent({
   age: 21,
   eyeColour: EyeColour.brown
 })
+
+function addNumbers(num1: number, num2: number): number {
+  return num1 + num2;
+}
+
+interface Person3 {
+  name: string;
+  age: number;
+  address: string;
+}
+
+const people: Person3[] = [
+  { name: 'John', age: 25, address: '123 Main St.' },
+  { name: 'Jane', age: 30, address: '456 Maple Ave.' },
+  { name: 'Bob', age: 35, address: '789 Oak St.' }
+];
+
+class Rectangle {
+  private width: number;
+  private height: number;
+
+  constructor(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
+  getArea(): number {
+    return this.width * this.height;
+  }
+}
+
+const rect = new Rectangle(5, 10);
+console.log(rect.getArea());
+
+function findMax(nums: number[]): number | null {
+  if (nums.length === 0) {
+    return null;
+  }
+
+  let max = nums[0];
+
+  for (let i = 1; i < nums.length; i++) {
+    if (nums[i] > max) {
+      max = nums[i];
+    }
+  }
+
+  return max;
+}
+
+console.log(findMax([3, 5, 2, 8, 1])); // Output: 8
+console.log(findMax([]));
+
+function reverseArray<T>(arr: T[]): T[] {
+  return arr.reverse();
+}
+
+console.log(reverseArray([1, 2, 3])); // Output: [3, 2, 1]
+console.log(reverseArray(['a', 'b', 'c']));
