@@ -156,3 +156,31 @@ function reverseArray<T>(arr: T[]): T[] {
 
 console.log(reverseArray([1, 2, 3])); // Output: [3, 2, 1]
 console.log(reverseArray(['a', 'b', 'c']));
+
+
+interface Person4 {
+  name: string;
+  age: number;
+  address: string;
+}
+
+
+let person4: Person4 = {
+  name: "Alice",
+  age: 25,
+  address: "123 Main St."
+};
+
+
+class Animal {
+  name: string;
+  type: string;
+
+  constructor(name: string, type: string) {
+    this.name = name;
+    this.type = type;
+  }
+}
+
+
+let cat: Animal = new Animal("Fluffy", "cat");
