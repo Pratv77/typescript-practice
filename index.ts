@@ -184,3 +184,22 @@ class Animal {
 
 
 let cat: Animal = new Animal("Fluffy", "cat");
+
+type KeyAndValue<T extends string, U> = {
+  [K in T]: K & U;
+};
+
+type ExampleType = KeyAndValue<'foo', number>;
+
+
+type ModifyKeys<T, U> = {
+  [K in keyof T as T[K] extends U ? `${K}Modified` : K]: T[K]
+};
+
+interface ExampleInterface {
+  foo: string;
+  bar: number;
+  baz: boolean;
+}
+
+type ModifiedKeysExample = ModifyKeys<ExampleInterface, number>;
