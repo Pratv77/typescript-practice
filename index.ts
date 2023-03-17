@@ -190,3 +190,21 @@ type KeyAndValue<T extends string, U> = {
 };
 
 type ExampleType = KeyAndValue<'foo', number>;
+
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output = identity<string>("hello");
+console.log(output); 
+
+// Union type example
+type stringOrNumber = string | number;
+
+function printValue(val: stringOrNumber) {
+  console.log(`The value is ${val}`);
+}
+
+printValue("hello"); 
+printValue(42);
